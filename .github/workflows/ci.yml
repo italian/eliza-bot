@@ -24,6 +24,7 @@ jobs:
           coverage run -m unittest discover -v
           coverage xml -i
       - name: Upload coverage to Codecov
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: codecov/codecov-action@v4
         with:
           files: coverage.xml
