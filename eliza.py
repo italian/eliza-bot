@@ -1,5 +1,6 @@
 import re
 import random
+import logging
 
 # Словарь правил: ключ — регулярное выражение (raw string),
 # значение — список шаблонов ответа.
@@ -35,7 +36,8 @@ def match_and_respond(message: str):
             if len(groups) == 1:
                 return template % groups[0]
             return template % groups
-        except Exception:
+        except TypeError as e:
+            logging.debug("Template formatting failed: %s", e)
             return template
 
 
