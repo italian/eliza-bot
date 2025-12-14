@@ -3,16 +3,14 @@
 
 Short, actionable guide for AI code assistants working in this repository.
 
-- **Big picture:** This repository is a tiny, single-file Python implementation of the ELIZA chatbot. The entire runtime logic lives in [eliza.py](eliza.py). The project intentionally avoids frameworks and external dependencies.
+- **Big picture:** This repository is a tiny, single-file Python implementation of the ELIZA chatbot. The entire runtime logic lives in [eliza.py](../eliza.py). The project intentionally avoids frameworks and external dependencies.
 
 - **Primary files:**
   - [eliza.py](../eliza.py) — single source of truth. Contains a `rules` mapping (pattern -> responses) and the matching/response logic.
   - [README.md](../README.md) — project description; update when adding new behaviors or CLI flags.
 
 - **What to change and how:**
-  - Add conversational rules by editing the top-level `rules` dict in `eliza.py`. Use regular-expression keys (prefer raw strings) and values as a list of response templates. Example pattern entry:
-
-  - Add conversational rules by editing the top-level `rules` dict in `eliza.py`. Use regular-expression keys (prefer raw strings) and values as a list of response templates. Example pattern entries (English and Russian):
+-  - Add conversational rules by editing the top-level `rules` dict in `eliza.py`. Use regular-expression keys (prefer raw strings) and values as a list of response templates. Example pattern entries (English and Russian):
 
     ```py
     # English example
@@ -23,10 +21,6 @@ Short, actionable guide for AI code assistants working in this repository.
     ```
 
   - Keep logic inside `eliza.py` small and self-contained. If adding complexity (new modules, tests), add a short note in `README.md` describing how to run things.
-
-- **Running & debugging:**
-  - There is no build step. Run the bot interactively with `python3 eliza.py` from the repository root.
-  - When modifying regex rules, test them locally by running the script and exercising the new patterns. Use small unit scripts or an interactive Python session to validate `re` behavior.
 
 - **Running & debugging:**
 - There is no build step. Run the bot interactively with `python3 eliza.py` from the repository root.
