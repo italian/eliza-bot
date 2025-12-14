@@ -1,5 +1,7 @@
 # eliza-bot
 
+[![CI](https://github.com/italian/eliza-bot/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/italian/eliza-bot/actions/workflows/ci.yml)
+
 A simple implementation of the ELIZA chatbot in Python
 
 ## Tests
