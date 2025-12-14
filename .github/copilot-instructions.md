@@ -12,8 +12,14 @@ Short, actionable guide for AI code assistants working in this repository.
 - **What to change and how:**
   - Add conversational rules by editing the top-level `rules` dict in `eliza.py`. Use regular-expression keys (prefer raw strings) and values as a list of response templates. Example pattern entry:
 
+  - Add conversational rules by editing the top-level `rules` dict in `eliza.py`. Use regular-expression keys (prefer raw strings) and values as a list of response templates. Example pattern entries (English and Russian):
+
     ```py
+    # English example
     rules[r"I need (.*)"] = ["Why do you need %s?", "Would getting %s help?"]
+
+    # Russian example matching this repo's style
+    rules[r"^Я хочу (.*)"] = ["Зачем ты хочешь %s?", "Когда ты этого хочешь?"]
     ```
 
   - Keep logic inside `eliza.py` small and self-contained. If adding complexity (new modules, tests), add a short note in `README.md` describing how to run things.
@@ -21,6 +27,16 @@ Short, actionable guide for AI code assistants working in this repository.
 - **Running & debugging:**
   - There is no build step. Run the bot interactively with `python3 eliza.py` from the repository root.
   - When modifying regex rules, test them locally by running the script and exercising the new patterns. Use small unit scripts or an interactive Python session to validate `re` behavior.
+
+- **Running & debugging:**
+- There is no build step. Run the bot interactively with `python3 eliza.py` from the repository root.
+- Test rules with the included unit tests:
+
+```bash
+python3 -m unittest -v
+```
+
+- When modifying regex rules, test them locally by running the script and exercising the new patterns. Use small unit scripts or an interactive Python session to validate `re` behavior.
 
 - **Project conventions & patterns:**
   - Minimalist, single-file design — avoid introducing heavy dependencies. Prefer standard library (`re`, `random`, etc.).
