@@ -3,6 +3,13 @@
 
 Short, actionable guide for AI code assistants working in this repository.
 
+**TL;DR**
+- Run tests: `python3 -m unittest -v`
+- Run bot: `python3 eliza.py`
+- Add a rule: edit the top-level `rules` dict in `eliza.py` and add regex -> responses
+- Keep changes small and open a PR with tests
+
+
 - **Big picture:** This repository is a tiny, single-file Python implementation of the ELIZA chatbot. The entire runtime logic lives in [eliza.py](../eliza.py). The project intentionally avoids frameworks and external dependencies.
 
 - **Primary files:**
