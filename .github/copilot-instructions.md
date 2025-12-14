@@ -6,8 +6,8 @@ Short, actionable guide for AI code assistants working in this repository.
 - **Big picture:** This repository is a tiny, single-file Python implementation of the ELIZA chatbot. The entire runtime logic lives in [eliza.py](eliza.py). The project intentionally avoids frameworks and external dependencies.
 
 - **Primary files:**
-  - [eliza.py](eliza.py) — single source of truth. Contains a `rules` mapping (pattern -> responses) and the matching/response logic.
-  - [README.md](README.md) — project description; update when adding new behaviors or CLI flags.
+  - [eliza.py](../eliza.py) — single source of truth. Contains a `rules` mapping (pattern -> responses) and the matching/response logic.
+  - [README.md](../README.md) — project description; update when adding new behaviors or CLI flags.
 
 - **What to change and how:**
   - Add conversational rules by editing the top-level `rules` dict in `eliza.py`. Use regular-expression keys (prefer raw strings) and values as a list of response templates. Example pattern entry:
@@ -53,6 +53,6 @@ python3 -m unittest -v
   - Update `README.md` for any user-facing CLI or behavior change.
 
 - **Examples in this repo:**
-  - The `rules` dict in [eliza.py](eliza.py) is the canonical example of how input patterns map to responses. Follow its shape when extending behavior.
+  - The `rules` dict in [eliza.py](../eliza.py) is the canonical example of how input patterns map to responses. Follow its shape when extending behavior.
 
 If anything above is unclear or you want examples converted to tests or a small CLI, tell me which area to expand.
